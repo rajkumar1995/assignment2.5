@@ -1,0 +1,24 @@
+1. Explain what is a cluster and what is a hadoop cluster
+     a group of similar things   positioned  closely together.
+one machine in the cluster is designated as the NameNode and another machine the as JobTracker; these are the masters. The rest of the machines in the cluster act as both DataNode and TaskTracker; these are the slaves. Hadoop clusters are often referred to as "shared nothing" systems because the only thing that is shared between nodes is the network that connects them. 
+Hadoop clusters are known for boosting the speed of data analysis applications. They also are highly scalable: If a cluster's processing power is overwhelmed by growing volumes of data, additional cluster nodes can be added to increase throughput. Hadoop clusters also are highly resistant to failure because each piece of data is copied onto other cluster nodes, which ensures that the data is not lost if one node fails.
+
+2. Explain the components of Hadoop 1.x
+    Name Node
+Name Node is placed in Master Node. It used to store Meta Data about Data Nodes like 
+
+Data Node
+Data Nodes are places in Slave Nodes. It is used to store our Application Actual Data. It stores data in Data Slots of size 64MB by default.
+
+MapReduce:
+MapReduce is a Distributed Data Processing or Batch Processing Programming Model. Like HDFS, MapReduce component also uses Commodity Hardware to process “High Volume of Variety of Data at High Velocity Rate” in a reliable and fault-tolerant manner.
+
+MapReduce component is again divided into two sub-components:
+
+Job Tracker
+Job Tracker is used to assign MapReduce Tasks to Task Trackers in the Cluster of Nodes. Sometimes, it reassigns same tasks to other Task Trackers as previous Task Trackers are failed or shutdown scenarios.
+
+Job Tracker maintains all the Task Trackers status like Up/running, Failed, Recovered etc.
+
+Task Tracker
+Task Tracker executes the Tasks which are assigned by Job Tracker and sends the status of those tasks to Job Tracker.
